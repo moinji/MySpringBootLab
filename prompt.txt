@@ -1,0 +1,49 @@
+[SpringBoot 실습2] Spring Boot와 JPA(Java Persistence API) 활용
+내 과제는 [실습2-1] Entity, Repository, Test케이스 작성입니다.  
+아래 조건을 만족하는 **코드(Entity, Repository, Test)** 를 만들어 주세요.  
+
+---
+
+📌 MariaDB 설정
+- 데이터베이스: lab_db
+- 사용자: lab / 비밀번호: lab
+- application.properties에 맞는 설정 포함
+
+---
+
+📌 Book 엔티티 작성
+- @Entity, @Table(name="books")
+- 필드: id(Long, PK, auto increment), title(String), author(String), isbn(String), publishDate(LocalDate), price(Integer)
+- Lombok(@Getter, @Setter, @NoArgsConstructor, @AllArgsConstructor, @Builder) 사용
+
+---
+
+📌 BookRepository 인터페이스 작성
+- JpaRepository<Book, Long> 상속
+- 추가 메소드:
+  - Optional<Book> findByIsbn(String isbn)
+  - List<Book> findByAuthor(String author)
+
+---
+
+📌 BookRepositoryTest 작성 (@DataJpaTest)
+아래 테스트 메소드를 모두 포함
+1. testCreateBook() : 도서 등록 확인
+2. testFindByIsbn() : ISBN으로 도서 조회
+3. testFindByAuthor() : 저자명으로 도서 조회
+4. testUpdateBook() : 도서 정보 수정
+5. testDeleteBook() : 도서 삭제 확인
+
+테스트 시 사용할 데이터 (Book 객체 두 권):
+- title="스프링 부트 입문", author="홍길동", isbn="9788956746425", price=30000, publishDate=2025-05-07
+- title="JPA 프로그래밍", author="박둘리", isbn="9788956746432", price=35000, publishDate=2025-04-30
+
+---
+
+🎯 최종 출력물
+1. Book.java (엔티티 코드)
+2. BookRepository.java (리포지토리 코드)
+3. BookRepositoryTest.java (테스트 코드)
+4. application.properties (DB 설정 포함)
+
+위 조건을 모두 충족하는 코드를 완성해 주세요.

@@ -12,7 +12,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component  // Temporarily disabled for API testing
 public class MyPropRunner implements ApplicationRunner {
     @Value("${myprop.userName}")
     private String name;

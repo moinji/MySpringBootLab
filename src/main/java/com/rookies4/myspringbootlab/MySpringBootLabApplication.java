@@ -6,7 +6,7 @@ import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.rookies3.myspringbootlab", "mylab"})
 class MySpringBootLabApplication {
     public static void main(String[] args) {
 

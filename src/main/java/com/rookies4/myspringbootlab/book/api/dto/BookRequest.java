@@ -1,4 +1,4 @@
-package mylab.book.api.dto;
+package com.rookies4.myspringbootlab.book.api.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotBlank;

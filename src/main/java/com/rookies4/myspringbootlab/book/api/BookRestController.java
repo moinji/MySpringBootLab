@@ -1,13 +1,13 @@
-package mylab.book.api;
+package com.rookies4.myspringbootlab.book.api;
 
+import com.rookies4.myspringbootlab.book.api.dto.BookRequest;
+import com.rookies4.myspringbootlab.book.api.dto.BookResponse;
+import com.rookies4.myspringbootlab.book.entity.Book;
+import com.rookies4.myspringbootlab.book.repository.BookRepository;
+import com.rookies4.myspringbootlab.common.error.BusinessException;
+import com.rookies4.myspringbootlab.common.error.ErrorObject;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import mylab.book.api.dto.BookRequest;
-import mylab.book.api.dto.BookResponse;
-import mylab.book.entity.Book;
-import mylab.book.repository.BookRepository;
-import mylab.common.error.BusinessException;
-import mylab.common.error.ErrorObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

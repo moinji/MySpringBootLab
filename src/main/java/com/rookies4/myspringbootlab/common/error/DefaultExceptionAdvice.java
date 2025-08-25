@@ -1,4 +1,4 @@
-package mylab.common.error;
+package com.rookies4.myspringbootlab.common.error;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

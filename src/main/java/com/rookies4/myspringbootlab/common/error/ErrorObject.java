@@ -1,4 +1,4 @@
-package mylab.common.error;
+package com.rookies4.myspringbootlab.common.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

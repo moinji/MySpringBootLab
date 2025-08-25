@@ -1,6 +1,6 @@
-package mylab.book.repository;
+package com.rookies4.myspringbootlab.book.repository;
 
-import mylab.book.entity.Book;
+import com.rookies4.myspringbootlab.book.entity.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

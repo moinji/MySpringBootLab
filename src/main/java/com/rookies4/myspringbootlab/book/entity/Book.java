@@ -1,4 +1,4 @@
-package mylab.book.entity;
+package com.rookies4.myspringbootlab.book.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

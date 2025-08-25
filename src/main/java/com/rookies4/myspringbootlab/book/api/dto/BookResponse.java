@@ -1,6 +1,6 @@
-package mylab.book.api.dto;
+package com.rookies4.myspringbootlab.book.api.dto;
 
-import mylab.book.entity.Book;
+import com.rookies4.myspringbootlab.book.entity.Book;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

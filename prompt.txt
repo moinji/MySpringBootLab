@@ -1,0 +1,61 @@
+너는 Spring Boot와 JPA 기반 도서 관리 시스템 실습을 대신 구현하는 전문가야.  
+다음 요구사항을 충족하는 코드를 작성해줘.
+
+[요구사항]
+1. 계층 구조
+   - Repository 계층
+     * Book.java : JPA 엔티티 (id, title, author, isbn, price, publishDate)
+     * BookRepository.java : JpaRepository 인터페이스
+       - findByIsbn(String isbn)
+       - findByAuthor(String author)
+   - DTO 계층
+     * BookDTO.java : static 내부 클래스로 3가지 DTO 정의
+       - BookCreateRequest : 도서 생성용 (title, author, isbn, price, publishDate)
+       - BookUpdateRequest : 도서 수정용 (title, author, isbn, price, publishDate 중 일부만 업데이트 가능, 검증 애노테이션 포함)
+       - BookResponse : 응답용 (id, title, author, isbn, price, publishDate)
+   - Service 계층
+     * BookService.java
+       - @Transactional 사용
+       - 도서 등록, 전체 조회, ID 조회, ISBN 조회, 저자 조회, 수정, 삭제 기능
+       - updateBook()은 요청값이 있는 필드만 부분 수정하도록 구현
+         예: 
+         ```java
+         if (request.getTitle() != null) { book.setTitle(request.getTitle()); }
+         ```
+       - Book → BookResponse 변환 메서드 포함
+   - Controller 계층
+     * BookController.java
+       - @RestController
+       - @RequestMapping("/api/books")
+       - @Valid + @RequestBody 활용
+       - CRUD API 구현
+         - POST /api/books
+         - GET /api/books
+         - GET /api/books/{id}
+         - GET /api/books/isbn/{isbn}
+         - GET /api/books/author?author=홍길동
+         - PUT /api/books/{id}
+         - DELETE /api/books/{id}
+
+2. 예외 처리
+   - BusinessException.java : 커스텀 예외
+   - DefaultExceptionAdvice.java : @RestControllerAdvice, @ExceptionHandler 활용
+   - 잘못된 요청/찾을 수 없는 데이터 → JSON 오류 응답 반환
+
+3. 주요 개선 사항 반영
+   - Controller는 요청/응답만 처리
+   - Service는 비즈니스 로직 담당
+   - DTO로 데이터 검증(@NotBlank, @NotNull, @Positive, @Pattern 등)
+   - 일관된 응답(JSON)
+   - update 시 null이 아닌 값만 반영
+
+[출력 형식]
+- Book.java
+- BookRepository.java
+- BookDTO.java
+- BookService.java
+- BookController.java
+- BusinessException.java
+- DefaultExceptionAdvice.java
+
+각 파일을 패키지별 코드로 작성하고, 필요한 import도 추가해줘.

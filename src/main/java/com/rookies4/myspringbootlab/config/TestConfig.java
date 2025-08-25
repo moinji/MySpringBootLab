@@ -1,4 +1,4 @@
-package com.rookies3.myspringbootlab.config;
+package com.rookies4.myspringbootlab.config;
 
 
 import org.springframework.context.annotation.Bean;
